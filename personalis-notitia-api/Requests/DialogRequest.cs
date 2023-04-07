@@ -3,5 +3,4 @@
 public class DialogRequest
 {
     public string? Message { get; set; }
-
 }

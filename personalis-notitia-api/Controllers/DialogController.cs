@@ -1,15 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using personalis_notitia_api.Requests;
+using personalis_notitia_api.Services;
 
 namespace personalis_notitia_api.Controllers;
 
 [ApiController]
 [Route("api/dialog")]
-public class DialogController: ControllerBase
+public class DialogController : ControllerBase
 {
     [HttpPost]
-    public string ProcessMessage(DialogRequest dto)
+    public async Task<ActionResult<string>> ProcessMessage([FromServices] IDialogService service)
     {
-        return $"you said: {dto.Message}";
+        return Ok(await service.GetDialogResponseAsync());
     }
 }

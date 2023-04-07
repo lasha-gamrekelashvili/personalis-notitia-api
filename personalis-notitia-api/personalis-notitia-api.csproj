@@ -7,4 +7,8 @@
         <RootNamespace>personalis_notitia_api</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="ExecutionControl" />
+    </ItemGroup>
+
 </Project>
