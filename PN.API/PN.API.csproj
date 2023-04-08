@@ -4,7 +4,6 @@
         <TargetFramework>net7.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <RootNamespace>personalis_notitia_api</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -12,6 +11,11 @@
       <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
       <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="7.0.0" />
       <PackageReference Include="MongoDB.Driver" Version="2.19.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\PN.Domain\PN.Domain.csproj" />
+      <ProjectReference Include="..\PN.Infrastructure\PN.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>

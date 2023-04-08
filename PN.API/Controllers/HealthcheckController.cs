@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace personalis_notitia_api.Controllers;
+namespace PN.API.Controllers;
 
 [ApiController]
 [Route("/")]

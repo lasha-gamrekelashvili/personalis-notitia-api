@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using personalis_notitia_api.Models;
-using personalis_notitia_api.Requests;
-using personalis_notitia_api.Services;
+using PN.API.Requests;
+using PN.API.Services;
+using PN.Domain.Models;
 
-namespace personalis_notitia_api.Controllers;
+namespace PN.API.Controllers;
 
 [ApiController]
 [Route("api/dialog")]

@@ -1,7 +1,7 @@
-﻿using personalis_notitia_api.Models;
-using personalis_notitia_api.Requests;
+﻿using PN.API.Requests;
+using PN.Domain.Models;
 
-namespace personalis_notitia_api.Services;
+namespace PN.API.Services;
 
 public interface IDialogService
 {

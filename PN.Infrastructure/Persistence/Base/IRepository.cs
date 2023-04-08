@@ -1,6 +1,6 @@
-﻿using personalis_notitia_api.Models.Base;
+﻿using PN.Domain.Models.Base;
 
-namespace personalis_notitia_api.Persistence.Base;
+namespace PN.Infrastructure.Persistence.Base;
 
 public interface IRepository<T> where T : BaseModel
 {

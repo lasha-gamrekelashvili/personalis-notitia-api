@@ -1,8 +1,8 @@
-﻿using personalis_notitia_api.Models;
-using personalis_notitia_api.Persistence;
-using personalis_notitia_api.Requests;
+﻿using PN.API.Requests;
+using PN.Domain.Models;
+using PN.Infrastructure.Persistence;
 
-namespace personalis_notitia_api.Services;
+namespace PN.API.Services;
 
 public class DialogService : IDialogService
 {

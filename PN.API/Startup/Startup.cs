@@ -1,10 +1,12 @@
-﻿using MongoDB.Driver;
-using personalis_notitia_api.Controllers;
-using personalis_notitia_api.Options;
-using personalis_notitia_api.Persistence;
-using personalis_notitia_api.Services;
+﻿using Microsoft.Extensions.Options;
+using MongoDB.Driver;
+using PN.API.Controllers;
+using PN.API.Options;
+using PN.API.Services;
+using PN.Infrastructure.Options;
+using PN.Infrastructure.Persistence;
 
-namespace personalis_notitia_api.Startup;
+namespace PN.API.Startup;
 
 public class Startup
 {
@@ -21,8 +23,9 @@ public class Startup
 
         services.AddOptions();
 
-        services.AddOptions<DatabaseOptions>()
-            .Bind(Configuration.GetSection("DatabaseOptions"));
+        services.Configure<AppSettingsDatabaseOptions>(Configuration.GetSection("DatabaseOptions"));
+        services.AddSingleton<IDatabaseOptions>(sp => sp.GetRequiredService<IOptions<AppSettingsDatabaseOptions>>().Value);
+
 
         services.AddControllers();
         services.AddScoped<DialogController>();

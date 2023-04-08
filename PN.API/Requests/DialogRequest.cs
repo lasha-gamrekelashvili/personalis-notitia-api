@@ -1,4 +1,4 @@
-﻿namespace personalis_notitia_api.Requests;
+﻿namespace PN.API.Requests;
 
 public class DialogRequest
 {

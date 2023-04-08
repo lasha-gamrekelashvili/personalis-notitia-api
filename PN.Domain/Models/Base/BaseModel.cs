@@ -1,4 +1,4 @@
-﻿namespace personalis_notitia_api.Models.Base;
+﻿namespace PN.Domain.Models.Base;
 
 public class BaseModel
 {

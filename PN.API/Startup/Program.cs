@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging.Console;
 
-namespace personalis_notitia_api.Startup;
+namespace PN.API.Startup;
 
 public static class Program
 {
