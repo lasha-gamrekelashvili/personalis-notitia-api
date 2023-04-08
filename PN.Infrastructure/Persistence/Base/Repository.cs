@@ -1,17 +1,16 @@
-﻿using Microsoft.Extensions.Options;
-using MongoDB.Driver;
-using personalis_notitia_api.Models.Base;
-using personalis_notitia_api.Options;
+﻿using MongoDB.Driver;
+using PN.Domain.Models.Base;
+using PN.Infrastructure.Options;
 
-namespace personalis_notitia_api.Persistence.Base;
+namespace PN.Infrastructure.Persistence.Base;
 
 public class Repository<T> : IRepository<T> where T : BaseModel
 {
     private readonly IMongoCollection<T> _collection;
 
-    protected Repository(IMongoClient client, IOptions<DatabaseOptions> options)
+    protected Repository(IMongoClient client, IDatabaseOptions options)
     {
-        var db = client.GetDatabase(options.Value.DatabaseName);
+        var db = client.GetDatabase(options.DatabaseName);
         _collection = db.GetCollection<T>(typeof(T).Name.ToLower());
     }
 
