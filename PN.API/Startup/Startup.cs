@@ -24,8 +24,8 @@ public class Startup
         services.AddOptions();
 
         services.Configure<AppSettingsDatabaseOptions>(Configuration.GetSection("DatabaseOptions"));
-        services.AddSingleton<IDatabaseOptions>(sp => sp.GetRequiredService<IOptions<AppSettingsDatabaseOptions>>().Value);
-
+        services.AddSingleton<IDatabaseOptions>(sp =>
+            sp.GetRequiredService<IOptions<AppSettingsDatabaseOptions>>().Value);
 
         services.AddControllers();
         services.AddScoped<DialogController>();
