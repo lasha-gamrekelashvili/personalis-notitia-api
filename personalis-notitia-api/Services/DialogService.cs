@@ -41,4 +41,9 @@ public class DialogService : IDialogService
         var random = new Random();
         return await Task.FromResult(DialogOptions[random.Next(DialogOptions.Length)]);
     }
+
+    public async Task<IEnumerable<Dialog>> GetDialogHistory()
+    {
+        return await _repository.GetAllAsync();
+    }
 }

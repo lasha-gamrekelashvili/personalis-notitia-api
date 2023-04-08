@@ -20,13 +20,26 @@ public class Repository<T> : IRepository<T> where T : BaseModel
         return _collection;
     }
 
-    public Task<IEnumerable<T>> GetAllAsync()
+    public async Task<IEnumerable<T>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        return await _collection
+            .Find(MatchAll())
+            .ToListAsync()
+            .ConfigureAwait(false);
     }
 
     public async Task AddAsync(T entity)
     {
         await _collection.InsertOneAsync(entity);
+    }
+
+    private static FilterDefinition<T> MatchAll()
+    {
+        var filters = new List<FilterDefinition<T>>
+        {
+            Builders<T>.Filter.Empty
+        };
+
+        return Builders<T>.Filter.And(filters);
     }
 }

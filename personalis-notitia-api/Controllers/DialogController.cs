@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using personalis_notitia_api.Models;
 using personalis_notitia_api.Requests;
 using personalis_notitia_api.Services;
 
@@ -12,5 +13,11 @@ public class DialogController : ControllerBase
     public async Task<ActionResult<string>> ProcessMessage([FromServices] IDialogService service, DialogRequest request)
     {
         return Ok(await service.GetDialogResponseAsync(request));
+    }
+
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<Dialog>>> GetDialogHistory([FromServices] IDialogService service)
+    {
+        return Ok(await service.GetDialogHistory());
     }
 }
