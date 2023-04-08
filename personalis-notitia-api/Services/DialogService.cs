@@ -1,5 +1,5 @@
 ﻿using personalis_notitia_api.Models;
-using personalis_notitia_api.Persistence.Dialog;
+using personalis_notitia_api.Persistence;
 using personalis_notitia_api.Requests;
 
 namespace personalis_notitia_api.Services;

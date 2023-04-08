@@ -1,10 +1,7 @@
 ﻿using MongoDB.Driver;
 using personalis_notitia_api.Controllers;
-using personalis_notitia_api.Models;
-using personalis_notitia_api.Models.Base;
 using personalis_notitia_api.Options;
-using personalis_notitia_api.Persistence.Dialog;
-using personalis_notitia_api.Persistence.Mongo;
+using personalis_notitia_api.Persistence;
 using personalis_notitia_api.Services;
 
 namespace personalis_notitia_api.Startup;

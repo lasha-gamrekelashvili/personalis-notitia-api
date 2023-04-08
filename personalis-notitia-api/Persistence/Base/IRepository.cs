@@ -1,6 +1,6 @@
 ﻿using personalis_notitia_api.Models.Base;
 
-namespace personalis_notitia_api.Persistence.Mongo;
+namespace personalis_notitia_api.Persistence.Base;
 
 public interface IRepository<T> where T : BaseModel
 {

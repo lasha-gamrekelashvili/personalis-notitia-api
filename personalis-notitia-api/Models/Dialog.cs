@@ -1,5 +1,4 @@
-﻿using MongoDB.Bson;
-using personalis_notitia_api.Models.Base;
+﻿using personalis_notitia_api.Models.Base;
 
 namespace personalis_notitia_api.Models;
 
