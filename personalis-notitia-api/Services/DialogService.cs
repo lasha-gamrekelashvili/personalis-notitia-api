@@ -1,4 +1,8 @@
-﻿namespace personalis_notitia_api.Services;
+﻿using personalis_notitia_api.Models;
+using personalis_notitia_api.Persistence.Dialog;
+using personalis_notitia_api.Requests;
+
+namespace personalis_notitia_api.Services;
 
 public class DialogService : IDialogService
 {
@@ -21,9 +25,19 @@ public class DialogService : IDialogService
         "I'm a language model created by OpenAI. What can I help you with today?",
     };
 
+    private readonly IDialogRepository _repository;
 
-    public async Task<string> GetDialogResponseAsync()
+    public DialogService(IDialogRepository repository)
     {
+        _repository = repository;
+    }
+
+    public async Task<string> GetDialogResponseAsync(DialogRequest request)
+    {
+        var dialog = new Dialog { Message = request.Message };
+
+        await _repository.AddAsync(dialog);
+
         var random = new Random();
         return await Task.FromResult(DialogOptions[random.Next(DialogOptions.Length)]);
     }
